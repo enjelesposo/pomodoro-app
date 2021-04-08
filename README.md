@@ -1,7 +1,8 @@
 # pomodoro-app
-Attempt at making a pomodoro app using HTML, CSS, &amp; Javascript.
+I'm making a pomodoro app using HTML, CSS, & Javascript.
 
 
-> Don't know how to center the svgs within their containers for the ambient sounds button. I deal with that later.
-> Need to change the button layouts.
-> Work on the script for the app to be usable.
+Further changes to be made:
+- make the ambient sound the same length as the study duration.
+- write the javascript code for the task list.
+- add a short and long break timer.
