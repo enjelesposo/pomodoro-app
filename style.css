@@ -1,0 +1,94 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; 
+    font-family: Raleway, sans-serif;
+}
+button,input:focus{
+    outline: none;
+}
+.container{
+    background: #F3EED9;
+    height: 100vh;
+}
+.header{
+    height: 10vh;
+    display: flex;
+    padding: 1rem;
+    background-color: rgb(223, 74, 74);
+    justify-content: center;
+    align-items: center;
+}
+.header img{
+    height: 100%;
+}
+.header h3{
+    font-size: 2rem;
+    color: white;
+}
+.sound-buttons button{
+    height: 3rem;
+    width: 3rem;
+    padding: 0.3rem;
+    border-radius: 50%;
+    border: none;
+    background: #BC827A;
+    display: none; /*--------------------- deal with this later ---------------------------*/
+}
+.sound-buttons button > svg{
+    width: 100%;
+    fill: white;
+}
+.timer{
+    text-align: center;
+    margin-top: 7%;
+}
+.timer h4{
+    font-size: 2rem;
+}
+.timer h3{
+    font-size: 4rem;
+    margin: 20px 0px;
+}
+.timer button{
+    background: #EC665C;
+    color: #F3EED9;
+    font-size: 1.2rem;
+    font-weight: bold;
+    width: 7rem;
+    padding: 0.3rem;
+    border: none;
+    border-radius: 2rem;
+}
+.long-break{
+    display: none;
+}
+.short-break{
+    display: none;
+}
+form{
+    margin: 3rem 0;
+    display: flex;
+    justify-content: center;
+}
+form input, button{
+    border: none;
+}
+form input{
+    background: #F3EED9;
+    border-bottom: 1px solid lightgrey;
+    padding: 0.3rem;
+    width: 15rem;
+    font-size: 1rem;
+}
+form button{
+    font-size: 1rem;
+    width: 1.6rem;
+    color: grey;
+    transition: all 0.5s ease;
+    background: transparent;
+}
+form button:hover{
+    background: #BC827A;
+    color: #F3EED9;
+}
