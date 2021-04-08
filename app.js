@@ -50,13 +50,62 @@ pomodoro = () => {
     // INPUT TASK
     const inputField = document.querySelector('.task-input');
     const addTaskButton = document.querySelector('.task-button');
+    const tasksList = document.querySelector('.tasks-list');
 
     addTaskButton.addEventListener('click', function(e){
         e.preventDefault();
-        
-        
-    })
+        // Create a div
+        const divTask = document.createElement('DIV');
+        divTask.className = 'task-wrapper';
 
+        // create an li
+        const task = document.createElement('LI');
+        task.className = 'task';
+        // input text to li
+        task.textContent = inputField.value;
+        // insert li to divTask
+        divTask.appendChild(task);
+
+        // create a checkbox
+        const checkDiv = document.createElement('DIV');     // create a checkbox container
+        checkDiv.className = 'check-container';    
+        const taskCheckbox = document.createElement('INPUT');
+        taskCheckbox.setAttribute('type', 'checkbox');      // change input type to checkbox
+        taskCheckbox.className = 'checkbox';
+        //insert to divTask
+        checkDiv.appendChild(taskCheckbox);
+        divTask.appendChild(checkDiv);
+
+        // create delete button
+        const deleteButton = document.createElement('BUTTON');
+        deleteButton.className = 'delete-button';
+        deleteButton.innerHTML = '<i class="fa fa-trash" aria-hidden="true"></i>';
+        // insert delete button to divTask
+        divTask.appendChild(deleteButton);
+
+        // append   divTask to ul
+        tasksList.appendChild(divTask);
+        //delete task
+
+        deleteButton.addEventListener('click', function(){
+            divTask.remove();
+        })
+
+
+
+        taskCheckbox.addEventListener('changed', function(){
+            if(taskCheckbox.checked){
+                task.style.color = 'lightgrey';
+                task.style.textDecoration = 'line-through';
+            } else {
+                task.style.color = '#F3EED9';
+                task.style.textDecoration = 'none';
+            }
+        })
+
+    })
+    
+    
 
 
 }
