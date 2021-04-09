@@ -4,12 +4,14 @@ pomodoro = () => {
     const message = document.querySelector('.message');       // text
     const playImg = document.querySelector('.play-button img');  // image play button
 
-    // TIME 
-    const timeDisplay = document.querySelector('.time-display');    
-    // PLAY BUTTON
-    const playButton = document.querySelector('.play-button');
+    
+    const timeDisplay = document.querySelector('.time-display');    // h3 time display
+    
+    const playButton = document.querySelector('.play-button');  // play button
 
-    var studyDuration = 10;  // 25 minutes
+    const soundButton = document.querySelectorAll('.sound-button'); // ambient sound buttons
+    
+    var studyDuration = 60;  // 25 minutes
 
     // click to play
     playButton.addEventListener('click', function(){
@@ -27,7 +29,28 @@ pomodoro = () => {
         }
     }
 
-    // timer duration
+    // change ambient sound
+    soundButton.forEach( function(button){
+        button.addEventListener('click', function() {
+            sound.src = this.getAttribute('data-sound');
+            playImg.src = './img/play.svg';
+            soundButtons.style.display = 'none'; 
+        })
+    })
+
+    // show buttons for ambient sounds
+    const showButtons = document.querySelector('.show-buttons');
+    const soundButtons = document.querySelector('.sound-button-wrapper');
+    showButtons.addEventListener('click', function(){
+        
+        if (soundButtons.style.display == 'none'){
+            soundButtons.style.display = 'flex';
+        } else{
+            soundButtons.style.display = 'none';
+        }
+    })
+
+    // checks the sound runtime
     sound.ontimeupdate = () => {
         let currentTime = sound.currentTime;
         let timeLeft = studyDuration - currentTime;
@@ -41,16 +64,30 @@ pomodoro = () => {
             sound.currentTime = 0;
             playImg.src = './img/play.svg';
             endBell.play();
+            breakTime();
         }
     }
 
+    // BREAK TIME     !!! I DONT KNOW WHAT TO DO YET !!!
+    /*
+        const breakTimePopup = document.querySelector('.break-popup');  // POPUP
+        const breakTimeButton = document.querySelector('.break-start'); // START button
+        const popupMessage = document.querySelector('.break-message');  // POP message
+    function breakTime(){
+        breakTimePopup.style.display = 'flex'; // makes the pop up visible
+    }
 
+    breakTimeButton.addEventListener('click', function(){
+        studyDuration = 5;
+        message.textContent = 'Time for a short break';
+        breakTimePopup.style.display = 'none';
+    })
+    */
 
-
-    // INPUT TASK
-    const inputField = document.querySelector('.task-input');
-    const addTaskButton = document.querySelector('.task-button');
-    const tasksList = document.querySelector('.tasks-list');
+    // ADD A TASK
+    const inputField = document.querySelector('.task-input');       // the text input field
+    const addTaskButton = document.querySelector('.task-button');   // the add button
+    const tasksList = document.querySelector('.tasks-list');        // the ul
 
     addTaskButton.addEventListener('click', function(e){
         e.preventDefault();
@@ -63,7 +100,7 @@ pomodoro = () => {
         task.className = 'task';
         // input text to li
         task.textContent = inputField.value;
-        // insert li to divTask
+        // append li to divTask
         divTask.appendChild(task);
 
         // create a checkbox
@@ -72,7 +109,7 @@ pomodoro = () => {
         const taskCheckbox = document.createElement('INPUT');
         taskCheckbox.setAttribute('type', 'checkbox');      // change input type to checkbox
         taskCheckbox.className = 'checkbox';
-        //insert to divTask
+        //append to divTask
         checkDiv.appendChild(taskCheckbox);
         divTask.appendChild(checkDiv);
 
@@ -85,26 +122,27 @@ pomodoro = () => {
 
         // append   divTask to ul
         tasksList.appendChild(divTask);
-        //delete task
 
+
+        // DELETE TASK
         deleteButton.addEventListener('click', function(){
             divTask.remove();
         })
 
-
-
-        taskCheckbox.addEventListener('changed', function(){
-            if(taskCheckbox.checked){
-                task.style.color = 'lightgrey';
+        // CHECKBOX changes opacity and styles text
+        taskCheckbox.addEventListener('change', function(){
+            if(taskCheckbox.checked){ 
+                divTask.style.opacity = 0.7;
+                task.style.opacity = 0.6;
                 task.style.textDecoration = 'line-through';
             } else {
+                task.style.opacity = 'initial';
                 task.style.color = '#F3EED9';
                 task.style.textDecoration = 'none';
             }
         })
 
     })
-    
     
 
 

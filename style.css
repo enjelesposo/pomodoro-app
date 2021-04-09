@@ -25,10 +25,11 @@ button,input:focus{
 .header h3{
     font-size: 2rem;
     color: white;
+    
 }
 .timer{
     text-align: center;
-    margin-top: 7%;
+    margin-top: 4%;
 }
 .timer h4{
     font-size: 1.6rem;
@@ -36,21 +37,77 @@ button,input:focus{
 .timer h3{
     font-size: 6rem;
     margin: 20px 0px;
+    padding: 2rem;
 }
+/* PLAY AND AMBIENT SOUNDS BUTTONS*/
 .buttons{
     display: flex;
     justify-content: center;
+    position: relative;
+    align-items: center;
+    margin: 0 auto;
 }
-.buttons button{
+.play-button{
     background: #EC665C;
     width: 3rem;
     height: 3rem;
     padding: 0.8rem;
     border-radius: 50%;
     text-align: center;
+    
 }
-.buttons img{
+.play-button img{
     width: 1.5rem;
+}
+
+.sound-buttons{
+    position: relative;
+}
+
+.side-buttons{
+    width: 1.6rem;
+    height: 1.6rem;
+    background: transparent;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.side-buttons img{
+    width: 100%;
+}
+
+.show-buttons{
+    margin-right: 3rem;
+}
+
+.settings-button{
+    margin-left:  3rem;
+}
+
+.sound-button-wrapper{
+    background: #8f645f3d;
+    height: 2.2rem;
+    width: 12rem;
+    display: none;
+    justify-content: space-around;
+    align-items: center;
+    border-radius: 3rem;
+    position: absolute;
+    bottom: 2.8rem;
+    left: -5rem;
+}
+
+.sound-button{
+    background: #BC827A;
+    width: 1.6rem;
+    height: 1.6rem;
+    padding: 0.2rem;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.sound-button img{
+    width: 100%;
 }
 
 form{
@@ -144,3 +201,53 @@ form button:hover{
     transition: all 0.5s ease;
     cursor: pointer;
 }
+
+/*    BREAK TIME POP UP    */
+/*
+.break-popup{                   
+    width: 25rem;
+    height: 20rem;
+    background: #EC665C;
+    padding: 1rem;
+    border-radius: 0.6rem;
+    display: none   ;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.break-popup h4, p{
+    color: #F3EED9;
+    font-size: 1.4em;
+}
+
+.break-popup p{
+    font-weight: bolder;
+}
+
+.break-popup button{
+    background: #EC665C;
+    border: 4px solid #FFF5F1;
+    width: 6rem;
+    padding: 0.3rem;
+    font-size: 1rem;
+    color: #FFF5F1;
+    font-weight: bolder;
+    border-radius: 25rem;
+    cursor: pointer;
+    transition: all 0.5s ease;
+}
+
+.break-popup button:hover{
+    background: #798897;
+}
+
+
+.break-popup img{
+    width: 8rem;
+}
+*/
