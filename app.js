@@ -35,6 +35,8 @@ pomodoro = () => {
             sound.src = this.getAttribute('data-sound');
             playImg.src = './img/play.svg';
             soundButtons.style.display = 'none'; 
+            let soundImg = document.querySelector('.show-buttons img');
+            soundImg.src = this.getAttribute('data-img');
         })
     })
 
@@ -49,6 +51,28 @@ pomodoro = () => {
             soundButtons.style.display = 'none';
         }
     })
+
+    // show study time select buttons
+    const showTimeSelect = document.querySelector('.time-select');
+    const timeButton = document.querySelector('.settings-button');
+    timeButton.addEventListener('click', function(button) {
+        if(showTimeSelect.style.display == 'none'){
+            showTimeSelect.style.display = 'flex';
+        } else{
+            showTimeSelect.style.display = 'none';
+        }
+    })
+
+    // change time duration 
+    const timeButtons = document.querySelectorAll('.time-buttons');
+    timeButtons.forEach(function(button){
+        button.addEventListener('click', function(){
+            message.textContent = this.getAttribute('data-message');
+            studyDuration = this.getAttribute('data-time');
+            showTimeSelect.style.display = 'none';
+        })
+    })
+
 
     // checks the sound runtime
     sound.ontimeupdate = () => {
@@ -67,22 +91,6 @@ pomodoro = () => {
             breakTime();
         }
     }
-
-    // BREAK TIME     !!! I DONT KNOW WHAT TO DO YET !!!
-    /*
-        const breakTimePopup = document.querySelector('.break-popup');  // POPUP
-        const breakTimeButton = document.querySelector('.break-start'); // START button
-        const popupMessage = document.querySelector('.break-message');  // POP message
-    function breakTime(){
-        breakTimePopup.style.display = 'flex'; // makes the pop up visible
-    }
-
-    breakTimeButton.addEventListener('click', function(){
-        studyDuration = 5;
-        message.textContent = 'Time for a short break';
-        breakTimePopup.style.display = 'none';
-    })
-    */
 
     // ADD A TASK
     const inputField = document.querySelector('.task-input');       // the text input field
@@ -136,6 +144,7 @@ pomodoro = () => {
                 task.style.opacity = 0.6;
                 task.style.textDecoration = 'line-through';
             } else {
+                divTask.style.opacity = 'initial';
                 task.style.opacity = 'initial';
                 task.style.color = '#F3EED9';
                 task.style.textDecoration = 'none';
@@ -144,7 +153,6 @@ pomodoro = () => {
 
     })
     
-
 
 }
 

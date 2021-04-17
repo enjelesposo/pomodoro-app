@@ -23,7 +23,7 @@
         <div class="timer">           
                 <h4 class="message">Time to focus!</h4>
                 <div class="time-wrapper">
-					<h3 class="time-display">25:00</h3>
+					<h3 class="time-display">00:00</h3>
 				</div>
         </div>
 
@@ -57,19 +57,19 @@
 					<img src="./img/music-note.svg" alt="music-select">
 				</button>
 				<div class="sound-button-wrapper">
-					<button class="sound-button" data-sound="./sounds/Clock-Ticking.mp3">
+					<button class="sound-button" data-sound="./sounds/Clock-Ticking.mp3" data-img="./img/clock.svg">
 						<img src="./img/clock.svg" alt="clock-button">		<!-- clock button -->
 					</button>
-					<button class="sound-button" data-sound="./sounds/cafe.mp3">
+					<button class="sound-button" data-sound="./sounds/cafe.mp3" data-img="./img/coffee-cup.svg">
 						<img src="./img/coffee-cup.svg" alt="cafe-button">	<!-- cafe button -->
 					</button>
-					<button class="sound-button" data-sound="./sounds/rain.mp3">
+					<button class="sound-button" data-sound="./sounds/rain.mp3" data-img="./img/rain.svg">
 						<img src="./img/rain.svg" alt="rain-button">		<!-- rain button -->
 					</button>
-					<button class="sound-button" data-sound="./sounds/forest.mp3">
+					<button class="sound-button" data-sound="./sounds/forest.mp3"data-img="./img/tree.svg">
 						<img src="./img/tree.svg" alt="forest-button">	<!-- forest button -->
 					</button>
-					<button class="sound-button" data-sound="./sounds/beach.mp3">
+					<button class="sound-button" data-sound="./sounds/beach.mp3" data-img="./img/sunrise.svg">
 						<img src="./img/sunrise.svg" alt="beach-button"> 	<!-- beach button -->
 					</button>
 				</div>
@@ -80,9 +80,21 @@
 				<img src="./img/play.svg" alt="">
 			</button>
 
-			<button class="settings-button side-buttons">
-				<img src="./img/black-settings-button.svg" alt="settings-button">
-			</button>
+			
+
+			<!-- CHANGE DURATION BUTTON -->
+			<div class="time-buttons-wrapper">
+				<button class="settings-button side-buttons">
+					<img src="./img/list.svg" alt="settings-button">
+				</button>
+				
+				<div class="time-select">
+					<button class="time-buttons" data-time="1500" data-message="Time to focus!">25:00</button>
+					<button class="time-buttons" data-time="300" data-message="Time for a short break.">5:00</button>
+					<button class="time-buttons" data-time="600" data-message="Take a long break.">10:00</button>
+				</div>
+
+			</div>
 		</div>
 
 		<!-- TASK INPUT -->
@@ -104,10 +116,9 @@
 
 
 
-<!--
+
     <div>Icons made by <a href="https://www.flaticon.com/authors/pixel-perfect" title="Pixel perfect">Pixel perfect</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
 	<div>Icons made by <a href="https://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
--->
 	<script src="./app.js"></script>
 </body>
 </html>
