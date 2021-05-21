@@ -1,5 +1,6 @@
 # pomodoro-app
 I'm making a pomodoro app using HTML, CSS, & Javascript.　</br>
+
 Pomodoroのアプリをさくせえしています。
 
 Further changes to be made:
