@@ -1,7 +1,7 @@
 # pomodoro-app
 I'm making a pomodoro app using HTML, CSS, & Javascript.　</br>
 
-*not responsive
+*not yet responsive
 
 Further changes to be made:
 - make the ticking ambient sound the same length as the study duration.
