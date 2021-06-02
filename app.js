@@ -10,8 +10,8 @@ pomodoro = () => {
     const playButton = document.querySelector('.play-button');  // play button
 
     const soundButton = document.querySelectorAll('.sound-button'); // ambient sound buttons
-    
-    var studyDuration = 60;  // 25 minutes
+
+    let studyDuration = 600;
 
     // click to play
     playButton.addEventListener('click', function(){
@@ -131,7 +131,8 @@ pomodoro = () => {
         // append   divTask to ul
         tasksList.appendChild(divTask);
 
-
+        inputField.value = '';
+        
         // DELETE TASK
         deleteButton.addEventListener('click', function(){
             divTask.remove();
