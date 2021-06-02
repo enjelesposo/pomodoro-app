@@ -8,9 +8,8 @@ button,
 input:focus {
   outline: none;
 }
-.container {
+body {
   background: #f3eed9;
-  height: 100vh;
 }
 .header {
   height: 10vh;
@@ -162,14 +161,12 @@ form button:hover {
   color: #f3eed9;
 }
 .tasks-container {
-  margin-left: 37%;
-  max-width: 20rem;
+  display: flex;
+  justify-content: center;
 }
-
 .tasks-list {
   list-style: none;
   overflow: hidden;
-  height: 20vh;
 }
 .task-wrapper {
   width: 100%;
@@ -193,6 +190,7 @@ form button:hover {
   position: relative;
   user-select: none;
   cursor: pointer;
+  margin-right: 8px;
 }
 .check-container input {
   -webkit-appearance: none;
@@ -225,4 +223,25 @@ form button:hover {
   font-size: 1rem;
   transition: all 0.5s ease;
   cursor: pointer;
+}
+
+#footer {
+  display: block;
+  transform: translate(-50%, 0);
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  font-size: 0.8rem;
+}
+
+@media screen and (max-width: 530px) {
+  .time-display {
+    font-size: 8rem !important;
+  }
+}
+
+@media screen and (max-width: 420px) {
+  .time-display {
+    font-size: 6rem !important;
+  }
 }
