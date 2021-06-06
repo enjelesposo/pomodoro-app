@@ -1,5 +1,5 @@
 # Pomodoro App
-A pomodoro app with focus and break timer. This is my first JS project! It's not good, but I'm still proud of it.
+A pomodoro app with focus and break timer. This is my first JS project! It's not much, but I'm still proud of it.
 
 ### Built with:
 - HTML
